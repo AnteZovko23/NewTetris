@@ -85,7 +85,7 @@ namespace NewTetris_Lib {
             this.field[rows[i], j] = 0;
 
             // Animation in ms
-            await Task.Delay(10);
+            await Task.Delay(0);
           
           // Removes the Pieces
          
@@ -106,19 +106,19 @@ namespace NewTetris_Lib {
         public void increasescore(int i)
         {
             if (i == 1){
-                score += 1;
+                score += 100;
             }
             if (i == 2)
             {
-                score += 2;
+                score += 200;
             }
             if (i == 3)
             {
-                score += 5;
+                score += 500;
             }
             if (i == 4)
             {
-                score += 10;
+                score += 1000;
             }
             scoreing.Text = score.ToString();
         }
