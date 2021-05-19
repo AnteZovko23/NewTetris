@@ -131,9 +131,12 @@ namespace NewTetris_Lib {
                 //setNextImage(nextNum);
             }    
      }
-
+        /// <summary>
+        /// This function handles the logic for storing a shape
+        /// </summary>
         public void storeShape()
         {
+            //I needed to check if the player had already stored the shape once to make sure the button wasnt spammed causing a cloning block bug
             if(shapeStored == false)
             {
                 clearStoreBox();
@@ -144,6 +147,7 @@ namespace NewTetris_Lib {
                 NextShape();
                 curShape.storePressed = true;
             }
+            //Here is where the actual block is stored
             else if(curShape.storePressed == false)
             {
                 clearStoreBox();
@@ -155,14 +159,25 @@ namespace NewTetris_Lib {
                 curShape.storePressed = true;
             }
         }
+        /// <summary>
+        /// Clear next box destroys any shapes still in the next box.
+        /// </summary>
         public void clearNextBox()
         {
             NextBox.Controls.Clear();
         }
+        /// <summary>
+        /// This destroys the current shape in the store box so it can be replaced
+        /// </summary>
         public void clearStoreBox()
         {
             StoreBox.Controls.Clear();
         }
+        /// <summary>
+        /// This uses createNextBlock to create blocks in the next block queue. t is the type of block as an int 0-6. Distance helps the blocks move down more in the next queue
+        /// </summary>
+        /// <param name="t"></param>
+        /// <param name="distance"></param>
         public void setNextImage(int t, int distance)
         {
             //Line
@@ -226,6 +241,10 @@ namespace NewTetris_Lib {
             
             
         }
+        /// <summary>
+        /// This will set the store block to what ever type of block matches with t
+        /// </summary>
+        /// <param name="t"></param>
         public void setStoreImage(int t)
         {
             //Line
@@ -287,6 +306,12 @@ namespace NewTetris_Lib {
                 createStoreBlock(2,1,6);
             }
         }
+        /// <summary>
+        /// This function uses x and y to position a picture in the next block queue. the t value is the type of block so it knows what color to use
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="t"></param>
         public void createNextBlock(int x, int y, int t)
         {
             if(t == 0)
@@ -367,6 +392,12 @@ namespace NewTetris_Lib {
                 pic.Top = 30*y;
             }
         }
+        /// <summary>
+        /// This sets a block into the store queue and then uses t to determine what color the block should be.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="t"></param>
         public void createStoreBlock(int x, int y, int t)
         {
            if(t == 0)
