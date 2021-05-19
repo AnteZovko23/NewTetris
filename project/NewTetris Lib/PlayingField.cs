@@ -115,8 +115,8 @@ namespace NewTetris_Lib {
         //minimum tick timer to 50.
         public void increasespeed(int i)
         {
-            level += i;
-            tmpspeed = 500 - (8 * level);
+            
+            tmpspeed = 500 - (7 * level);
             if (tmpspeed > 50)
             {
                 lvlspeed = tmpspeed;
@@ -131,19 +131,19 @@ namespace NewTetris_Lib {
         public void increasescore(int i)
         {
             if (i == 1){
-                score += 100;
+                score += 100*level;
             }
             if (i == 2)
             {
-                score += 200;
+                score += 200*level;
             }
             if (i == 3)
             {
-                score += 500;
+                score += 500*level;
             }
             if (i == 4)
             {
-                score += 1000;
+                score += 1000*level;
             }
             scoreing.Text = score.ToString();
         }
