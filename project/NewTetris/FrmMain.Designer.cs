@@ -101,7 +101,7 @@
        this.label7.Name = "label7";
        this.label7.Size = new System.Drawing.Size(76, 25);
        this.label7.TabIndex = 8;
-       this.label7.Text = "Contorls:\r\nArrow keys = Movement\r\nStore Block = X\r\nRotate Block = S\r\nInstant Drop = Space Bar";
+       this.label7.Text = "Controls:\r\nArrow keys = Movement\r\nStore Block = X\r\nRotate Block = S\r\nInstant Drop = Space Bar";
       //
       // label3
       // 
