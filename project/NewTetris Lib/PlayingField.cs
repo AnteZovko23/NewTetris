@@ -26,6 +26,8 @@ namespace NewTetris_Lib {
         public int level = 0;
         public static Control scoreing;
         public int score = 0;
+        public int lvlspeed = 500;
+        public int tmpspeed = 500;
 
     /// <summary>
     /// Observer pattern event for when a row is 
@@ -95,12 +97,26 @@ namespace NewTetris_Lib {
      movePiecesDown(rows, rows.Min());
      increaseLevel(rows.Count);
      increasescore(rows.Count);
+     increasespeed(rows.Count);
     }
 
         public void increaseLevel(int i)
         {
             level += i;
             lvlLabel.Text = level.ToString();
+        }
+        public void increasespeed(int i)
+        {
+            level += i;
+            tmpspeed = 500 - (10 * level);
+            if (tmpspeed > 50)
+            {
+                lvlspeed = tmpspeed;
+            }
+            else
+            {
+                lvlspeed = 50;
+            }
         }
 
         public void increasescore(int i)
